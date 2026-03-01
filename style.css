@@ -4,7 +4,7 @@
 }
 
 body{
-    background-color: rgb(30, 30, 36) ;
+    background-color:#8A84E2;
     color: rgb(255, 248, 240);
     text-align: center;
 }
@@ -15,7 +15,7 @@ body{
    justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: aqua;
+    
 }
 
 .game{
@@ -25,9 +25,8 @@ body{
     width: 60vmin;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1.5vmin;
-    background-color: blanchedalmond;
-   
+    gap: 1.5vmin; 
+   margin-top: 5vmin;
 }
 
 
@@ -35,4 +34,23 @@ body{
     width: 18vmin;
     height: 18vmin;
    border-radius: 10%;
+   background-color: #B7D3F2;
+   box-shadow:0 0 1rem rgb(0,0,0);
+   font-size: 40px;
+   border: none;
+}
+
+#restart{
+    margin-top: 20vmin;
+    padding: 4vmin;
+    margin: 4vmin;
+    box-shadow:0 0 1rem rgba(0, 0, 0, 0.544);
+    font-size: larger;
+    background-color: #79BEEE;
+    border: none;
+    border-radius: 1rem;
+}
+
+h1{
+   color: #03034b;
 }
