@@ -1,4 +1,4 @@
-  let boxes = document.querySelectorAll(".box");
+let boxes = document.querySelectorAll(".box");
   let restart = document.querySelector("#restart") ;
   let msgContainer= document.querySelector(".msgContainer");
   let msg= document.querySelector("#msg");
@@ -52,4 +52,3 @@
       }
 
   }
-   

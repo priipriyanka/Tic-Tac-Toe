@@ -36,8 +36,9 @@ body{
    border-radius: 10%;
    background-color: #B7D3F2;
    box-shadow:0 0 1rem rgb(0,0,0);
-   font-size: 40px;
+   font-size: 70px;
    border: none;
+   
 }
 
 #restart{
@@ -53,4 +54,14 @@ body{
 
 h1{
    color: #03034b;
+}
+
+
+
+#msg{
+    font-size: 5vmin;
+}
+
+.hide{
+    display: none;
 }
