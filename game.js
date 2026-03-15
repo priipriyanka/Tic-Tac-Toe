@@ -10,7 +10,7 @@ let boxes = document.querySelectorAll(".box");
     [0, 3, 6],
     [0, 4, 8],
     [3, 4, 5],
-    [1, 4, 6],
+    [1, 4, 7],
     [2, 4, 6],
     [2, 5, 8],
     [6, 7, 8]
@@ -19,7 +19,6 @@ let boxes = document.querySelectorAll(".box");
   boxes.forEach((box) => {
     box.addEventListener("click", ()=>{
         console.log("Box was Clicked");
-         let winner=checkWinner();
         if(turnO){
             box.innerText= "O";
             turnO=false;
@@ -30,7 +29,7 @@ let boxes = document.querySelectorAll(".box");
         }
         box.disabled=true;
         c++;
-        checkWinner(); 
+      let winner=checkWinner();
 
         if(c === 9 && !winner){
            count();
