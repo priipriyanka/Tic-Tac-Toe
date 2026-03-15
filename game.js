@@ -3,7 +3,8 @@ let boxes = document.querySelectorAll(".box");
   let msgContainer= document.querySelector(".msgContainer");
   let msg= document.querySelector("#msg");
   let turnO= true;
-
+   let  c=0;
+ 
   const win=[
     [0, 1, 2],
     [0, 3, 6],
@@ -18,6 +19,7 @@ let boxes = document.querySelectorAll(".box");
   boxes.forEach((box) => {
     box.addEventListener("click", ()=>{
         console.log("Box was Clicked");
+         let winner=checkWinner();
         if(turnO){
             box.innerText= "O";
             turnO=false;
@@ -27,13 +29,48 @@ let boxes = document.querySelectorAll(".box");
             turnO=true;
         }
         box.disabled=true;
+        c++;
         checkWinner(); 
+
+        if(c === 9 && !winner){
+           count();
+        }
     })   
   } )
-   
-  const showWinner= (winner) =>{
-     msg.innerText=`Congratulation!!! Winner is ${winner} `;
+  const count =() =>{
+    msg.innerText=`Ohh!!! It's a Draw...`;
      msgContainer.classList.remove("hide");
+           disables();
+
+  }
+ 
+
+  const reset =()=>{
+    turnO=true;
+    c=0;
+    enables();
+      msgContainer.classList.add("hide");
+  }
+
+
+   const disables= () =>{
+    for(let box of boxes){
+      box.disabled=true;
+    }    
+   }
+
+   const enables= () =>{
+    for(let box of boxes){
+      box.disabled=false;
+      box.innerText="";
+    }
+  }
+
+
+  const showWinner= (winner) =>{
+     msg.innerText=`Congratulation!!! Winner is ${winner} ...`;
+     msgContainer.classList.remove("hide");
+     disables();
   }
 
   const checkWinner = () =>{
@@ -46,9 +83,13 @@ let boxes = document.querySelectorAll(".box");
         if(posval1 == posval2 && posval2 == posval3){
             console.log("Winner");
             showWinner(posval1);
+            return true;
         }
       }
 
       }
+      return false;
 
   }
+
+    restart.addEventListener("click",reset);
